@@ -15,9 +15,9 @@
 
     // === logo change
     if (ud_header.classList.contains("sticky")) {
-      logo.src = "assets/images/logo/logo.svg";
+      logo.src = "assets/images/logoscodehorizontal.png";
     } else {
-      logo.src = "assets/images/logo/logo-white.svg";
+      logo.src = "assets/images/logoscodehorizontal.png";
     }
 
     // show or hide the back-top-top button
@@ -31,6 +31,16 @@
       backToTop.style.display = "none";
     }
   };
+
+  const toolsContainer = document.querySelector("#tools-container");
+  const scrollTools = document.querySelector("#scroll-tools-right");
+  toolsContainer.onscroll = function() {
+    if( toolsContainer.scrollLeft > 50 ) {
+      scrollTools.classList.add("invisible");
+    } else {
+      scrollTools.classList.remove("invisible");
+    }
+  }
 
   // ===== responsive navbar
   let navbarToggler = document.querySelector("#navbarToggler");
