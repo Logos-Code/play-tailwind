@@ -613,6 +613,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   bottom: 0.25rem;
 }
 
+.-top-6{
+  top: -1.5rem;
+}
+
 .z-40{
   z-index: 40;
 }
@@ -1672,6 +1676,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   opacity: 0.6;
 }
 
+.opacity-50{
+  opacity: 0.5;
+}
+
 .shadow-lg{
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
@@ -2325,6 +2333,10 @@ body {
 
   .lg\:max-w-\[565px\]{
     max-width: 565px;
+  }
+
+  .lg\:flex-row-reverse{
+    flex-direction: row-reverse;
   }
 
   .lg\:border-0{
