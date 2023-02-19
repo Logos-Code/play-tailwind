@@ -597,6 +597,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   right: -1.5rem;
 }
 
+.-top-6{
+  top: -1.5rem;
+}
+
 .top-1{
   top: 0.25rem;
 }
@@ -611,10 +615,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .bottom-1{
   bottom: 0.25rem;
-}
-
-.-top-6{
-  top: -1.5rem;
 }
 
 .z-40{
@@ -674,11 +674,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .-mx-3{
   margin-left: -0.75rem;
   margin-right: -0.75rem;
-}
-
-.mx-1{
-  margin-left: 0.25rem;
-  margin-right: 0.25rem;
 }
 
 .mx-4{
@@ -811,6 +806,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: inline-flex;
 }
 
+.grid{
+  display: grid;
+}
+
 .hidden{
   display: none;
 }
@@ -927,6 +926,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 50px;
 }
 
+.min-w-\[60px\]{
+  min-width: 60px;
+}
+
 .max-w-full{
   max-width: 100%;
 }
@@ -987,10 +990,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   max-width: 525px;
 }
 
-.flex-none{
-  flex: none;
-}
-
 .-translate-y-1\/2{
   --tw-translate-y: -50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1027,6 +1026,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   resize: both;
 }
 
+.grid-flow-col{
+  grid-auto-flow: column;
+}
+
 .flex-wrap{
   flex-wrap: wrap;
 }
@@ -1049,6 +1052,16 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .justify-between{
   justify-content: space-between;
+}
+
+.justify-items-center{
+  justify-items: center;
+}
+
+.space-x-4 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1rem * var(--tw-space-x-reverse));
+  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .overflow-hidden{
@@ -1522,12 +1535,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-size: 32px;
 }
 
-.text-\[28px\]{
-  font-size: 28px;
-}
-
 .text-\[30px\]{
   font-size: 30px;
+}
+
+.text-\[28px\]{
+  font-size: 28px;
 }
 
 .font-medium{
@@ -1670,10 +1683,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .opacity-70{
   opacity: 0.7;
-}
-
-.opacity-60{
-  opacity: 0.6;
 }
 
 .opacity-50{
@@ -2333,10 +2342,6 @@ body {
 
   .lg\:max-w-\[565px\]{
     max-width: 565px;
-  }
-
-  .lg\:flex-row-reverse{
-    flex-direction: row-reverse;
   }
 
   .lg\:border-0{

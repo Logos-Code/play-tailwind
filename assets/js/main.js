@@ -34,13 +34,32 @@
 
   const toolsContainer = document.querySelector("#tools-container");
   const scrollTools = document.querySelector("#scroll-tools-right");
-  toolsContainer.onscroll = function() {
-    if( toolsContainer.scrollLeft > 50 ) {
-      scrollTools.classList.add("invisible");
-    } else {
-      scrollTools.classList.remove("invisible");
+  if( toolsContainer.scrollWidth > toolsContainer.clientWidth ){
+    scrollTools.classList.remove("hidden");
+    toolsContainer.onscroll = function() {
+      if( toolsContainer.scrollLeft > 50 ) {
+        scrollTools.classList.add("invisible");
+      } else {
+        scrollTools.classList.remove("invisible");
+      }
     }
   }
+
+  // addEventListener("resize", (event) => {
+  //   if( toolsContainer.scrollWidth > toolsContainer.clientWidth ){
+  //     const scrollTools = document.querySelector("#scroll-tools-right");
+  //     scrollTools.classList.remove("hidden");
+  //     toolsContainer.onscroll = function() {
+  //       if( toolsContainer.scrollLeft > 50 ) {
+  //         scrollTools.classList.add("invisible");
+  //       } else {
+  //         scrollTools.classList.remove("invisible");
+  //       }
+  //     }
+  //   } else {
+  //     toolsContainer.onscroll = null;
+  //   }
+  // });
 
   // ===== responsive navbar
   let navbarToggler = document.querySelector("#navbarToggler");
