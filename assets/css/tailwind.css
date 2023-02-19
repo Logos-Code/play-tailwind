@@ -641,6 +641,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   z-index: 998;
 }
 
+.z-\[100\]{
+  z-index: 100;
+}
+
 .-mx-4{
   margin-left: -1rem;
   margin-right: -1rem;
