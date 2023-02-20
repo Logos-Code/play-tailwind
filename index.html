@@ -17,7 +17,7 @@
   </head>
   <body>
     <!-- ====== Navbar Section Start -->
-    <div class="ud-header absolute top-0 left-0 z-40 flex w-full items-center bg-transparent">
+    <div class="ud-header fixed top-0 left-0 z-40 flex w-full">
       <div class="container">
         <div class="relative -mx-4 flex items-center justify-between">
           <div class="w-60 max-w-full px-4">
@@ -32,25 +32,25 @@
                 <span class="relative my-[6px] block h-[2px] w-[30px] bg-white"></span>
                 <span class="relative my-[6px] block h-[2px] w-[30px] bg-white"></span>
               </button>
-              <nav id="navbarCollapse" class="absolute right-4 top-full hidden w-full max-w-[250px] rounded-lg bg-white py-5 shadow-lg lg:static lg:block lg:w-full lg:max-w-full lg:bg-transparent lg:py-0 lg:px-4 lg:shadow-none xl:px-6">
+              <nav id="navbarCollapse" class="absolute right-4 top-full hidden w-full max-w-[250px] rounded-lg bg-black bg-opacity-50 backdrop-blur border py-5 shadow-lg lg:border-0 lg:static lg:block lg:w-full lg:max-w-full lg:bg-transparent lg:py-0 lg:px-4 lg:shadow-none xl:px-6">
                 <ul class="blcok lg:flex">
                   <li class="group relative">
-                    <a href="#home" class="ud-menu-scroll mx-8 flex py-2 text-base text-dark group-hover:text-primary lg:mr-0 lg:inline-flex lg:py-6 lg:px-0 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70">
+                    <a href="#home" class="ud-menu-scroll mx-8 flex py-2 text-base text-white group-hover:text-primary lg:mr-0 lg:inline-flex lg:py-6 lg:px-0 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70">
                       Inicio
                     </a>
                   </li>
                   <li class="group relative">
-                    <a href="#services" class="ud-menu-scroll mx-8 flex py-2 text-base text-dark group-hover:text-primary lg:mr-0 lg:ml-7 lg:inline-flex lg:py-6 lg:px-0 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 xl:ml-12">
+                    <a href="#services" class="ud-menu-scroll mx-8 flex py-2 text-base text-white group-hover:text-primary lg:mr-0 lg:ml-7 lg:inline-flex lg:py-6 lg:px-0 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 xl:ml-12">
                       Servicios
                     </a>
                   </li>
                   <li class="group relative">
-                    <a href="#us" class="ud-menu-scroll mx-8 flex py-2 text-base text-dark group-hover:text-primary lg:mr-0 lg:ml-7 lg:inline-flex lg:py-6 lg:px-0 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 xl:ml-12">
+                    <a href="#us" class="ud-menu-scroll mx-8 flex py-2 text-base text-white group-hover:text-primary lg:mr-0 lg:ml-7 lg:inline-flex lg:py-6 lg:px-0 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 xl:ml-12">
                       Nosotros
                     </a>
                   </li>
                   <li class="group relative">
-                    <a href="#contact" class="ud-menu-scroll mx-8 flex py-2 text-base text-dark group-hover:text-primary lg:mr-0 lg:ml-7 lg:inline-flex lg:py-6 lg:px-0 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 xl:ml-12">
+                    <a href="#contact" class="ud-menu-scroll mx-8 flex py-2 text-base text-white group-hover:text-primary lg:mr-0 lg:ml-7 lg:inline-flex lg:py-6 lg:px-0 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 xl:ml-12">
                       Contacto
                     </a>
                   </li>
@@ -61,6 +61,7 @@
         </div>
       </div>
     </div>
+
     <!-- ====== Navbar Section End -->
 
     <!-- ====== Hero Section Start -->
@@ -98,8 +99,8 @@
         </div>
       </div>
 
-      <div class="relative w-full bg-gray-200 wow fadeInUp px-8 z-[999]" data-wow-delay=".3s">
-        <div id="scroll-tools-right" class="absolute right-3 top-5 h-5 w-5 z-[998] items-center justify-center rounded-md text-white shadow-md opacity-70 hidden" data-wow-delay=".6s">
+      <div class="relative w-full bg-gray-200 wow fadeInUp px-8 z-30" data-wow-delay=".3s">
+        <div id="scroll-tools-right" class="absolute right-3 top-5 h-5 w-5 z-[30] items-center justify-center rounded-md text-white shadow-md opacity-70 hidden" data-wow-delay=".6s">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.568 18.005l-1.414-1.415 4.574-4.59-4.574-4.579 1.414-1.416 5.988 5.995-5.988 6.005z"/></svg>
         </div>
         <div id="tools-container" class="grid grid-flow-col justify-items-center space-x-4 w-full overflow-x-auto">
@@ -365,7 +366,7 @@
                   <input
                     type="text"
                     name="fullName"
-                    placeholder="Miguel Santos"
+                    placeholder="Miguel Castañeda"
                     class="w-full border-0 border-b border-[#f1f1f1] py-4 focus:border-primary focus:outline-none"
                   />
                 </div>
