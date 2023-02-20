@@ -1172,6 +1172,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   overflow-x: visible;
 }
 
+.scroll-auto{
+  scroll-behavior: auto;
+}
+
 .scroll-smooth{
   scroll-behavior: smooth;
 }
