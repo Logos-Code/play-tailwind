@@ -29,9 +29,9 @@ function scrollTo(element, to = 0, duration = 500) {
     const sticky = ud_header.offsetTop;
 
     if (window.pageYOffset > sticky) {
-      ud_header.classList.add("bg-black", "bg-opacity-50", "backdrop-blur")
+      ud_header.classList.add("bg-black", "bg-opacity-70", "backdrop-blur")
     } else {
-      ud_header.classList.remove("bg-black", "bg-opacity-50", "backdrop-blur");
+      ud_header.classList.remove("bg-black", "bg-opacity-70", "backdrop-blur");
     }
 
     // show or hide the back-top-top button

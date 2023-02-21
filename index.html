@@ -21,36 +21,37 @@
       <div class="container">
         <div class="relative -mx-4 flex items-center justify-between">
           <div class="w-60 max-w-full px-4">
-            <a href="index.html" class="navbar-logo block w-full py-5">
+            <a href="#home" class="navbar-logo block w-full py-5">
               <img src="assets/images/logoscodehorizontal.png" alt="Logos Code" class="header-logo w-full"/>
             </a>
           </div>
           <div class="flex w-full items-center px-4 justify-end">
             <div>
               <button id="navbarToggler" class="absolute right-4 top-1/2 block -translate-y-1/2 rounded-lg px-3 py-[6px] ring-primary focus:ring-2 lg:hidden">
-                <span class="relative my-[6px] block h-[2px] w-[30px] bg-white"></span>
-                <span class="relative my-[6px] block h-[2px] w-[30px] bg-white"></span>
-                <span class="relative my-[6px] block h-[2px] w-[30px] bg-white"></span>
+                <span class="relative my-[6px] block h-[2px] w-[30px] bg-primary"></span>
+                <span class="relative my-[6px] block h-[2px] w-[30px] bg-primary"></span>
+                <span class="relative my-[6px] block h-[2px] w-[30px] bg-primary"></span>
               </button>
-              <nav id="navbarCollapse" class="absolute right-4 top-full hidden w-full max-w-[250px] rounded-lg bg-black bg-opacity-50 backdrop-blur border py-5 shadow-lg lg:backdrop-blur-none lg:border-0 lg:static lg:block lg:w-full lg:max-w-full lg:bg-transparent lg:py-0 lg:px-4 lg:shadow-none xl:px-6">
+              <nav id="navbarCollapse" class="absolute right-4 top-full hidden w-full max-w-[250px] rounded-lg bg-black bg-opacity-50 backdrop-blur border-2 border-primary py-5 shadow-lg lg:backdrop-blur-none lg:border-0 lg:static lg:block lg:w-full lg:max-w-full lg:bg-transparent lg:py-0 lg:px-4 lg:shadow-none xl:px-6">
                 <ul class="blcok lg:flex">
                   <li class="group relative">
-                    <a href="#home" class="ud-menu-scroll mx-8 flex py-2 text-base text-white group-hover:text-primary lg:mr-0 lg:inline-flex lg:py-6 lg:px-0 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70">
+                    <a href="#home" class="ud-menu-scroll mx-8 flex py-2 text-base text-white group-hover:text-primary lg:mr-0 lg:inline-flex lg:py-6 lg:px-0 lg:group-hover:text-primary">
                       Inicio
                     </a>
                   </li>
                   <li class="group relative">
-                    <a href="#services" class="ud-menu-scroll mx-8 flex py-2 text-base text-white group-hover:text-primary lg:mr-0 lg:ml-7 lg:inline-flex lg:py-6 lg:px-0 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 xl:ml-12">
+                    <!-- <a href="#services" style="text-shadow: -1px 1px 2px #000, 1px 2px 6px #000, 1px -1px 0 #000, -1px -1px 0 #000;" class="ud-menu-scroll mx-8 flex py-2 text-base text-white group-hover:text-primary lg:mr-0 lg:ml-7 lg:inline-flex lg:py-6 lg:px-0 lg:group-hover:text-primary xl:ml-12"> -->
+                      <a href="#services" class="drop-shadow-lg shadow-blue-600/50 ud-menu-scroll mx-8 flex py-2 text-base text-white group-hover:text-primary lg:mr-0 lg:ml-7 lg:inline-flex lg:py-6 lg:px-0 lg:group-hover:text-primary xl:ml-12">
                       Servicios
                     </a>
                   </li>
                   <li class="group relative">
-                    <a href="#us" class="ud-menu-scroll mx-8 flex py-2 text-base text-white group-hover:text-primary lg:mr-0 lg:ml-7 lg:inline-flex lg:py-6 lg:px-0 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 xl:ml-12">
+                    <a href="#us" class="ud-menu-scroll mx-8 flex py-2 text-base text-white group-hover:text-primary lg:mr-0 lg:ml-7 lg:inline-flex lg:py-6 lg:px-0 lg:group-hover:text-primary xl:ml-12">
                       Nosotros
                     </a>
                   </li>
                   <li class="group relative">
-                    <a href="#contact" class="ud-menu-scroll mx-8 flex py-2 text-base text-white group-hover:text-primary lg:mr-0 lg:ml-7 lg:inline-flex lg:py-6 lg:px-0 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 xl:ml-12">
+                    <a href="#contact" class="ud-menu-scroll mx-8 flex py-2 text-base text-white group-hover:text-primary lg:mr-0 lg:ml-7 lg:inline-flex lg:py-6 lg:px-0 lg:group-hover:text-primary xl:ml-12">
                       Contacto
                     </a>
                   </li>
@@ -78,12 +79,12 @@
               </p>
               <ul class="mb-10 flex flex-wrap items-center justify-center">
                 <li>
-                  <button class="scroll-to-services inline-flex items-center justify-center rounded-lg bg-white py-4 px-6 text-center text-base font-medium text-dark transition duration-300 ease-in-out hover:text-primary hover:shadow-lg sm:px-10">
+                  <button class="scroll-to-services inline-flex items-center justify-center rounded-lg bg-white py-4 px-6 text-center text-base font-medium text-dark transition duration-300 ease-in-out hover:bg-primary hover:text-white hover:shadow-lg sm:px-10">
                     Conocer más
                   </button>
                 </li>
                 <li>
-                  <button class="scroll-to-contact flex items-center py-4 px-6 text-base font-medium text-white transition duration-300 ease-in-out hover:opacity-70 sm:px-10">
+                  <button class="scroll-to-contact flex items-center py-4 px-6 text-base font-medium text-white transition duration-300 ease-in-out sm:px-10 hover:text-primary">
                     Contáctanos
                     <span class="pl-2">
                       <svg width="20" height="8" viewBox="0 0 20 8" class="fill-current">
@@ -394,7 +395,7 @@
                 <div class="mb-0">
                   <button
                     type="submit"
-                    class="inline-flex items-center justify-center rounded bg-primary py-4 px-6 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-dark">
+                    class="inline-flex items-center justify-center rounded bg-primary py-4 px-6 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-primary-darker">
                     Enviar
                   </button>
                 </div>
@@ -417,7 +418,7 @@
     <!-- ====== Footer Section End -->
 
     <!-- ====== Back To Top Start -->
-    <a href="javascript:void(0)" class="back-to-top fixed bottom-8 right-8 left-auto z-[999] hidden h-10 w-10 items-center justify-center rounded-md bg-primary text-white shadow-md transition duration-300 ease-in-out hover:bg-dark">
+    <a href="javascript:void(0)" class="back-to-top fixed bottom-8 right-8 left-auto z-[999] hidden h-10 w-10 items-center justify-center rounded-md bg-primary text-white shadow-md transition duration-300 ease-in-out hover:bg-primary-darker">
       <span class="mt-[6px] h-3 w-3 rotate-45 border-t border-l border-white"></span>
     </a>
     <!-- ====== Back To Top End -->
@@ -458,15 +459,19 @@
           ) {
             document
               .querySelector(".ud-menu-scroll")
-              .classList.remove("active");
-            currLink.classList.add("active");
+              .classList.remove("text-primary");
+            
+            currLink.classList.add("text-primary", "underline");
+            currLink.classList.remove("text-white");
           } else {
-            currLink.classList.remove("active");
+            currLink.classList.add("text-white");
+            currLink.classList.remove("text-primary", "underline");
           }
         }
       }
 
       window.document.addEventListener("scroll", onScroll);
+      onScroll();
     </script>
   </body>
 </html>
