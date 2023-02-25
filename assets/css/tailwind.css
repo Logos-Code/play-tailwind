@@ -529,6 +529,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   position: sticky;
 }
 
+.inset-0{
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
 .top-0{
   top: 0px;
 }
@@ -860,6 +867,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 2.75rem;
 }
 
+.h-60{
+  height: 15rem;
+}
+
 .w-full{
   width: 100%;
 }
@@ -910,6 +921,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-\[50px\]{
   width: 50px;
+}
+
+.w-96{
+  width: 24rem;
 }
 
 .min-w-\[35px\]{
@@ -1285,6 +1300,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-\[\#D64937\]{
   --tw-bg-opacity: 1;
   background-color: rgb(214 73 55 / var(--tw-bg-opacity));
+}
+
+.bg-gray-900{
+  --tw-bg-opacity: 1;
+  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-20{
@@ -1792,8 +1812,26 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-duration: 150ms;
 }
 
+.transition-all{
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.delay-200{
+  transition-delay: 200ms;
+}
+
 .duration-300{
   transition-duration: 300ms;
+}
+
+.duration-700{
+  transition-duration: 700ms;
+}
+
+.duration-100{
+  transition-duration: 100ms;
 }
 
 .ease-in-out{
@@ -2007,6 +2045,10 @@ body {
 
 .hover\:opacity-100:hover{
   opacity: 1;
+}
+
+.hover\:opacity-0:hover{
+  opacity: 0;
 }
 
 .hover\:shadow-lg:hover{
