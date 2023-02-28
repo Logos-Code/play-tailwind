@@ -9,6 +9,26 @@
     <link rel="stylesheet" href="assets/css/animate.css" />
     <link rel="stylesheet" href="assets/css/tailwind.css" />
 
+    <style>
+      .flip {
+        perspective: 600px;
+      }
+      .flip-content {
+        transition: transform 1s;
+        transform-style: preserve-3d;
+      }
+      .flip:hover .flip-content, .flipped {
+        transform: rotateY(180deg);
+        transition: transform 1s;
+      }
+      .flip-front, .flip-back {
+        backface-visibility: hidden;
+      }
+      .flip-back {
+        transform: rotateY(180deg);
+      }
+    </style>
+
     <!-- ==== WOW JS ==== -->
     <script src="assets/js/wow.min.js"></script>
     <script>
@@ -149,7 +169,7 @@
     <!-- ====== Hero Section End -->
 
     <!-- ====== Features Section Start -->
-    <section id="services" class="pt-20 pb-8 lg:pt-[120px] lg:pb-[70px] bg-[#f3f4fe]">
+    <section id="services" class="pt-20 pb-8 lg:pt-[120px] lg:pb-[70px] bg-zinc-50">
       <div class="container">
         <div class="-mx-4 flex flex-wrap">
           <div class="w-full px-4">
@@ -167,53 +187,130 @@
           </div>
         </div>
         <div class="flex flex-wrap">
-          <div class="w-full px-4 md:w-1/2 wow fadeInUp group" data-wow-delay=".1s">
-            <div class="relative z-10 mb-8 flex h-[70px] w-[70px] items-center justify-center rounded-2xl bg-primary">
-              <span class="absolute top-0 left-0 z-[-1] mb-8 flex h-[70px] w-[70px] rotate-[25deg] items-center justify-center rounded-2xl bg-primary bg-opacity-20 duration-300 group-hover:rotate-45"></span>
-              <svg class="h-8 w-8 text-white"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <polyline points="16 16 12 12 8 16" />  <line x1="12" y1="12" x2="12" y2="21" />  <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3" />  <polyline points="16 16 12 12 8 16" /></svg>
+          <div class="flip h-64 md:h-60 lg:h-56 mb-2 md:mb-4 lg:mb-4 px-4 md:px-2 lg:px-2 w-full md:w-1/2 wow fadeInUp group" data-wow-delay=".1s">
+            <div class="relative flip-content w-full h-full">
+              <div class="absolute flip-front bg-black text-white p-4 w-full h-full rounded-2xl shadow-md shadow-zinc-400">
+                <div class="flex mb-8 h-[70px]">
+                  <div class="z-10 flex h-[70px] w-[70px] items-center justify-center rounded-2xl bg-primary">
+                    <svg class="h-8 w-8 text-white"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <polyline points="16 16 12 12 8 16" />  <line x1="12" y1="12" x2="12" y2="21" />  <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3" />  <polyline points="16 16 12 12 8 16" /></svg>
+                  </div>
+                  <h4 class="flex text-xl font-bold ml-4 items-center">
+                    Cloud
+                  </h4>
+                </div>
+                <p class="text-center">
+                  ¿Deseas comenzar a usar los beneficios de la nube?
+                </p>
+                <span class="absolute flip-card-control bottom-2 right-2 rounded-full bg-white animate-ping h-5 w-5 md:h-0 md:w-0"></span>
+                <span class="absolute flip-card-control bottom-2 right-2 rounded-full bg-white h-5 w-5 md:h-0 md:w-0"></span>
+              </div>
+              <div class="absolute flip-back bg-white text-black p-4 w-full h-full rounded-2xl shadow-md shadow-zinc-400">
+                <div class="flex mb-8 h-[70px]">
+                  <h4 class="flex text-xl font-bold items-center">
+                    Cloud
+                  </h4>
+                </div>
+                <p class="">
+                  Llevamos tu negocio a la nube con una arquitectura escalable, económica y resiliente. Adecuada a tus necesidades y las de tu equipo de ingeniería.
+                </p>
+                <span class="absolute flip-card-control-return bottom-2 right-2 rounded-full bg-black animate-ping h-5 w-5 md:h-0 md:w-0"></span>
+                <span class="absolute flip-card-control-return bottom-2 right-2 rounded-full bg-black h-5 w-5 md:h-0 md:w-0"></span>
+              </div>
             </div>
-            <h4 class="mb-3 text-xl font-bold text-dark">
-              Cloud
-            </h4>
-            <p class="mb-8 text-body-color lg:mb-11">
-              ¿Deseas comenzar a usar los beneficios de la nube?
-            </p>
           </div>
-          <div class="w-full px-4 md:w-1/2 wow fadeInUp group" data-wow-delay=".15s">
-            <div class="relative z-10 mb-8 flex h-[70px] w-[70px] items-center justify-center rounded-2xl bg-primary">
-              <span class="absolute top-0 left-0 z-[-1] mb-8 flex h-[70px] w-[70px] rotate-[25deg] items-center justify-center rounded-2xl bg-primary bg-opacity-20 duration-300 group-hover:rotate-45"></span>
-              <svg class="h-8 w-8 text-white"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <circle cx="12" cy="12" r="3" />  <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" /></svg>
+
+          <div class="flip h-64 md:h-60 lg:h-56 mb-2 md:mb-4 lg:mb-4 px-4 md:px-2 lg:px-2 w-full md:w-1/2 wow fadeInUp group" data-wow-delay=".15s">
+            <div class="relative flip-content w-full h-full">
+              <div class="absolute flip-front bg-black text-white p-4 w-full h-full rounded-2xl shadow-md shadow-zinc-400">
+                <div class="flex mb-8 h-[70px]">
+                  <div class="z-10 flex h-[70px] w-[70px] items-center justify-center rounded-2xl bg-primary">
+                    <svg class="h-8 w-8 text-white"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <circle cx="12" cy="12" r="3" />  <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" /></svg>
+                  </div>
+                  <h4 class="flex text-xl font-bold ml-4 items-center">
+                    Desarrollo
+                  </h4>
+                </div>
+                <p class="text-center">
+                  ¿Tienes algúna idea o necesidad en tu negocio?
+                </p>
+                <span class="absolute flip-card-control bottom-2 right-2 rounded-full bg-white animate-ping h-5 w-5 md:h-0 md:w-0"></span>
+                <span class="absolute flip-card-control bottom-2 right-2 rounded-full bg-white h-5 w-5 md:h-0 md:w-0"></span>
+              </div>
+              <div class="absolute flip-back bg-white text-black p-4 w-full h-full rounded-2xl shadow-md shadow-zinc-400">
+                <div class="flex mb-8 h-[70px]">
+                  <h4 class="flex text-xl font-bold items-center">
+                    Desarrollo
+                  </h4>
+                </div>
+                <p class="">
+                  Te acompañamos desde la definición hasta el despliegue, uso y mantenimiento.
+                </p>
+                <span class="absolute flip-card-control-return bottom-2 right-2 rounded-full bg-black animate-ping h-5 w-5 md:h-0 md:w-0"></span>
+                <span class="absolute flip-card-control-return bottom-2 right-2 rounded-full bg-black h-5 w-5 md:h-0 md:w-0"></span>
+              </div>
             </div>
-            <h4 class="mb-3 text-xl font-bold text-dark">
-              Desarrollo de Software
-            </h4>
-            <p class="mb-8 text-body-color lg:mb-11">
-              ¿Tienes algúna idea o necesidad en tu negocio?
-            </p>
           </div>
-          <div class="w-full px-4 md:w-1/2 wow fadeInUp group" data-wow-delay=".2s">
-            <div class="relative z-10 mb-8 flex h-[70px] w-[70px] items-center justify-center rounded-2xl bg-primary">
-              <span class="absolute top-0 left-0 z-[-1] mb-8 flex h-[70px] w-[70px] rotate-[25deg] items-center justify-center rounded-2xl bg-primary bg-opacity-20 duration-300 group-hover:rotate-45"></span>
-              <svg class="h-8 w-8 text-white"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />  <line x1="12" y1="18" x2="12.01" y2="18" /></svg>
+          <div class="flip h-64 md:h-60 lg:h-56 mb-2 md:mb-4 lg:mb-4 px-4 md:px-2 lg:px-2 w-full md:w-1/2 wow fadeInUp group" data-wow-delay=".2s">
+            <div class="relative flip-content w-full h-full">
+              <div class="absolute flip-front bg-black text-white p-4 w-full h-full rounded-2xl shadow-md shadow-zinc-400">
+                <div class="flex mb-8 h-[70px]">
+                  <div class="z-10 flex h-[70px] w-[70px] items-center justify-center rounded-2xl bg-primary">
+                    <svg class="h-8 w-8 text-white"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />  <line x1="12" y1="18" x2="12.01" y2="18" /></svg>
+                  </div>
+                  <h4 class="flex text-xl font-bold ml-4 items-center">
+                    Móviles
+                  </h4>
+                </div>
+                <p class="text-center">
+                  ¿Buscas alcanzar a tus clientes de forma personalizada?
+                </p>
+                <span class="absolute flip-card-control bottom-2 right-2 rounded-full bg-white animate-ping h-5 w-5 md:h-0 md:w-0"></span>
+                <span class="absolute flip-card-control bottom-2 right-2 rounded-full bg-white h-5 w-5 md:h-0 md:w-0"></span>
+              </div>
+              <div class="absolute flip-back bg-white text-black p-4 w-full h-full rounded-2xl shadow-md shadow-zinc-400">
+                <div class="flex mb-8 h-[70px]">
+                  <h4 class="flex text-xl font-bold items-center">
+                    Móviles
+                  </h4>
+                </div>
+                <p class="">
+                  Ve con tus clientes a donde vayan, te apoyamos desde la creación de tu campaña de marketing hasta el desarrollo y seguimiento de tu aplicación movil.
+                </p>
+                <span class="absolute flip-card-control-return bottom-2 right-2 rounded-full bg-black animate-ping h-5 w-5 md:h-0 md:w-0"></span>
+                <span class="absolute flip-card-control-return bottom-2 right-2 rounded-full bg-black h-5 w-5 md:h-0 md:w-0"></span>
+              </div>
             </div>
-            <h4 class="mb-3 text-xl font-bold text-dark">
-              Móviles
-            </h4>
-            <p class="mb-8 text-body-color lg:mb-11">
-              ¿Buscas alcanzar a tus clientes de forma personalizada?
-            </p>
           </div>
-          <div class="w-full px-4 md:w-1/2 wow fadeInUp group" data-wow-delay=".25s">
-            <div class="relative z-10 mb-8 flex h-[70px] w-[70px] items-center justify-center rounded-2xl bg-primary">
-              <span class="absolute top-0 left-0 z-[-1] mb-8 flex h-[70px] w-[70px] rotate-[25deg] items-center justify-center rounded-2xl bg-primary bg-opacity-20 duration-300 group-hover:rotate-45"></span>
-              <svg class="h-8 w-8 text-white"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" /></svg>
+          <div class="flip h-64 md:h-60 lg:h-56 mb-2 md:mb-4 lg:mb-4 px-4 md:px-2 lg:px-2 w-full md:w-1/2 wow fadeInUp group" data-wow-delay=".25s">
+            <div class="relative flip-content w-full h-full">
+              <div class="absolute flip-front bg-black text-white p-4 w-full h-full rounded-2xl shadow-md shadow-zinc-400">
+                <div class="flex mb-8 h-[70px]">
+                  <div class="z-10 flex h-[70px] w-[70px] items-center justify-center rounded-2xl bg-primary">
+                    <svg class="h-8 w-8 text-white"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" /></svg>
+                  </div>
+                  <h4 class="flex text-xl font-bold ml-4 items-center">
+                    DevOps
+                  </h4>
+                </div>
+                <p class="text-center">
+                  ¿Necesitas procesos de desarrollo rápidos y confiables?
+                </p>
+                <span class="absolute flip-card-control bottom-2 right-2 rounded-full bg-white animate-ping h-5 w-5 md:h-0 md:w-0"></span>
+                <span class="absolute flip-card-control bottom-2 right-2 rounded-full bg-white h-5 w-5 md:h-0 md:w-0"></span>
+              </div>
+              <div class="absolute flip-back bg-white text-black p-4 w-full h-full rounded-2xl shadow-md shadow-zinc-400">
+                <div class="flex mb-8 h-[70px]">
+                  <h4 class="flex text-xl font-bold items-center">
+                    DevOps
+                  </h4>
+                </div>
+                <p class="">
+                  Te ayudamos a establecer procesos eficientes para que tu equipo de ingenieria se enfoque en lo que realmente importa, llevar valor a tus clientes.
+                </p>
+                <span class="absolute flip-card-control-return bottom-2 right-2 rounded-full bg-black animate-ping h-5 w-5 md:h-0 md:w-0"></span>
+                <span class="absolute flip-card-control-return bottom-2 right-2 rounded-full bg-black h-5 w-5 md:h-0 md:w-0"></span>
+              </div>
             </div>
-            <h4 class="mb-3 text-xl font-bold text-dark">
-              DevOps
-            </h4>
-            <p class="mb-8 text-body-color lg:mb-11">
-              ¿Necesitas procesos de desarrollo rápidos y confiables?
-            </p>
           </div>
         </div>
       </div>
@@ -221,7 +318,7 @@
     <!-- ====== Features Section End -->
 
     <!-- ====== About Section Start -->
-    <section id="us" class="bg-[#f3f4fe] pt-20 pb-20 lg:pt-[120px] lg:pb-[120px]">
+    <section id="us" class="bg-zinc-50 pt-20 pb-20 lg:pt-[120px] lg:pb-[120px]">
       <div class="container">
         <div class="wow fadeInUp bg-white" data-wow-delay=".2s">
           <div class="-mx-4 flex flex-wrap">
@@ -261,7 +358,7 @@
 
     <!-- ====== Contact Start ====== -->
     <section id="contact" class="relative py-20 md:py-[120px]">
-      <div class="absolute top-0 left-0 z-[-1] h-1/2 w-full bg-[#f3f4fe] lg:h-[45%] xl:h-1/2"></div>
+      <div class="absolute top-0 left-0 z-[-1] h-1/2 w-full bg-zinc-50 lg:h-[45%] xl:h-1/2"></div>
       <div class="container px-4">
         <div class="-mx-4 flex flex-wrap items-center">
           <div class="w-full px-4 lg:w-7/12 xl:w-8/12">
