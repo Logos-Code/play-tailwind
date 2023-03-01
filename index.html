@@ -30,6 +30,7 @@
     </style>
 
     <!-- ==== WOW JS ==== -->
+    <script src="assets/js/particles.min.js"></script>
     <script src="assets/js/wow.min.js"></script>
     <script>
       new WOW().init();
@@ -318,33 +319,26 @@
       <div class="container">
         <div class="wow fadeInUp bg-white" data-wow-delay=".2s">
           <div class="-mx-4 flex flex-wrap">
-            <div class="w-full px-4">
+            <div class="w-full px-4 relative">
               <div class="items-center justify-between overflow-hidden border lg:flex">
-                <div class="w-full py-12 px-7 sm:px-12 md:p-16 lg:max-w-[565px] lg:py-9 lg:px-16 xl:max-w-[640px] xl:p-[70px]">
+                <div class="w-full z-10 py-12 px-7 sm:px-12 md:p-16 lg:max-w-[565px] lg:py-9 lg:px-16 xl:max-w-[640px] xl:p-[70px] pointer-events-none">
                   <span class="mb-5 inline-block bg-primary py-2 px-5 text-sm font-medium text-white">
                     Sobre nosotros
                   </span>
-                  <h2 class="mb-6 text-3xl font-bold text-dark sm:text-4xl sm:leading-snug 2xl:text-[40px]">
+                  <h2 class="pointer-events-auto backdrop-blur rounded-2xl mb-6 text-3xl font-bold text-dark sm:text-4xl sm:leading-snug 2xl:text-[40px]">
                     Somos un equipo multidisciplinario listo para ayudarte.
                   </h2>
-                  <p class="mb-9 text-base leading-relaxed text-body-color">
+                  <p class="pointer-events-auto backdrop-blur rounded-2xl mb-9 text-base leading-relaxed text-body-color">
                     Desde la primera línea de código hasta la puesta en marcha de tu sistema, estamos ahí para brindarte un desarrollo, arquitectura y procesos con la mejor calidad.
                   </p>
-                  <!-- <p class="mb-9 text-base leading-relaxed text-body-color">
-                    The main ‘thrust' is to focus on educating attendees on how
-                    to best protect highly vulnerable business applications with
-                    interactive panel.
-                  </p> -->
-                  <!-- <a href="javascript:void(0)" class="inline-flex items-center justify-center rounded bg-primary py-4 px-6 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-opacity-90 hover:shadow-lg">
-                    Learn More
-                  </a> -->
                 </div>
-                <div class="text-center">
+                <div class="text-center pointer-events-none">
                   <div class="relative z-10 inline-block">
                     <img src="assets/images/about/about-image.svg" alt="image" class="mx-auto lg:ml-auto"/>
                   </div>
                 </div>
               </div>
+              <div id="particles-js" class="absolute top-0 left-0 w-full h-full bg-no-repeat bg-cover bg-center"></div>
             </div>
           </div>
         </div>
@@ -519,6 +513,9 @@
 
       window.document.addEventListener("scroll", onScroll);
       onScroll();
+    </script>
+    <script>
+      particlesJS("particles-js", {"particles":{"number":{"value":100,"density":{"enable":true,"value_area":300}},"color":{"value":"#000000"},"shape":{"type":"circle","stroke":{"width":0,"color":"#000000"},"polygon":{"nb_sides":5},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":0.5,"random":false,"anim":{"enable":false,"speed":1,"opacity_min":0.1,"sync":false}},"size":{"value":3,"random":true,"anim":{"enable":false,"speed":40,"size_min":0.1,"sync":false}},"line_linked":{"enable":true,"distance":150,"color":"#000000","opacity":0.4,"width":1},"move":{"enable":true,"speed":6,"direction":"none","random":false,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":1200}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":false,"mode":"repulse"},"onclick":{"enable":true,"mode":"push"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});
     </script>
   </body>
 </html>
