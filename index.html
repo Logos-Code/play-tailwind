@@ -28,8 +28,76 @@
         transform: rotateY(180deg);
       }
     </style>
+    <style>
+      #btn {
+        outline: none;
+        overflow: hidden;
+        width: 100%;
+        transition: 1s;
+      }
+      .checked-loading, .checked-active {
+        border-radius: 100%;
+        box-shadow: 0 0 12px -2px rgba(0, 0, 0, 0.2);
+        position: absolute;
+        top:0;
+        right: -40px;
+        opacity: 0;
+        transition: 1s;
+      }
+      .checked-loading svg, .checked-active svg {
+        width: 20px;
+        height: 20px;
+        margin: 20px;
+      }
+      .checked-active path {
+        stroke-width: 7;
+        stroke: #fff;
+        stroke-dasharray: 34;
+        stroke-dashoffset: 34;
+        stroke-linecap: round;
+      }
+      .loading {
+        transition: 1s;
+      }
+      .loading p {
+        transition: 1s;
+        margin-right: 60px;
+      }
+      .loading .checked-loading {
+        opacity: 1;
+        transition: 1s;
+        right: 20px;
+      }
+      .loading .checked-loading path {
+        transition: 1s;
+        transition-delay: 1s;
+        /*stroke-dashoffset: 0;*/
+      }
+      .active {
+        transition: 1s;
+      }
+      .active p {
+        transition: 1s;
+        margin-right: 60px;
+      }
+      .active .checked-active {
+        opacity: 1;
+        transition: 1s;
+        right: 20px;
+      }
+      .active .checked-active path {
+        transition: 1s;
+        transition-delay: 1s;
+        stroke-dashoffset: 0;
+      }
+
+      #contactForm *:disabled {
+        opacity: 0.8;
+      }
+    </style>
 
     <!-- ==== WOW JS ==== -->
+    <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
     <script src="assets/js/particles.min.js"></script>
     <script src="assets/js/wow.min.js"></script>
     <script>
@@ -396,48 +464,64 @@
               <h3 class="mb-8 text-2xl font-semibold md:text-[26px]">
                 Envianos un mensaje
               </h3>
-              <form>
+              <form id="contactForm">
                 <div class="mb-6">
-                  <label for="fullName" class="block text-sm font-medium mb-2">Nombre*</label>
+                  <label for="fullName" class="block text-sm font-medium mb-2">Nombre</label>
                   <input
                     type="text"
                     name="fullName"
+                    id="fullName"
                     placeholder="Miguel Castañeda"
                     class="w-full rounded-lg p-2.5 bg-gray-700 border border-gray-600 placeholder-gray-400 text-white text-sm focus:border-primary focus:outline-none"
                   />
                 </div>
                 <div class="mb-6">
-                  <label for="email" class="block text-sm font-medium mb-2">Correo electrónico*</label>
+                  <label for="email" class="block text-sm font-medium mb-2">Correo electrónico</label>
                   <input
                     type="email"
                     name="email"
+                    id="email"
                     placeholder="ejemplo@tucorreo.com"
                     class="w-full rounded-lg p-2.5 bg-gray-700 border border-gray-600 placeholder-gray-400 text-white text-sm focus:border-primary focus:outline-none"
                   />
                 </div>
                 <div class="mb-6">
-                  <label for="phone" class="block text-sm font-medium mb-2">Teléfono*</label>
+                  <label for="phone" class="block text-sm font-medium mb-2">Teléfono</label>
                   <input
                     type="text"
                     name="phone"
+                    id="phone"
                     placeholder="55 5211 1152"
                     class="w-full rounded-lg p-2.5 bg-gray-700 border border-gray-600 placeholder-gray-400 text-white text-sm focus:border-primary focus:outline-none"
                   />
                 </div>
                 <div class="mb-6">
-                  <label for="message" class="block text-sm font-medium mb-2">Mensaje*</label>
+                  <label for="message" class="block text-sm font-medium mb-2">Mensaje</label>
                   <textarea
                     name="message"
-                    rows="1"
+                    id="message"
+                    rows="3"
                     placeholder="Escribe tu mensaje aquí"
                     class="w-full resize-none rounded-lg p-2.5 bg-gray-700 border border-gray-600 placeholder-gray-400 text-white text-sm focus:border-primary focus:outline-none"
                   ></textarea>
                 </div>
-                <div class="mb-0">
-                  <button
-                    type="submit"
-                    class="inline-flex items-center justify-center rounded bg-primary py-4 px-6 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-primary-darker">
-                    Enviar
+                <div class="mb-0 flex">
+                  <button id="btn" type="submit" class="relative h-14 rounded bg-primary py-4 px-6 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-primary-darker">
+                    <div class="wrap transition-opacity duration-1000 w-full items-center justify-center">
+                      <p id="btnTextSend" class="absolute transition-opacity duration-1000 flex top-0 left-0 m-0 p-0 w-full h-full items-center justify-center">Enviar</p>
+                      <p id="btnTextDone" class="absolute transition-opacity duration-1000 flex top-0 left-0 m-0 p-0 w-full h-full items-center justify-center opacity-0">¡Gracias!</p>
+                    </div>
+                    <div class="checked-loading" role="status">
+                      <svg aria-hidden="true" class="w-8 h-8 text-white animate-spin fill-[#344456]" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
+                        <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/>
+                      </svg>
+                    </div>
+                    <div class="checked-active">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                        <path fill="transparent" d="M14.1 27.2l7.1 7.2 16.7-16.8"></path>
+                      </svg>
+                    </div>
                   </button>
                 </div>
               </form>
@@ -516,6 +600,96 @@
     </script>
     <script>
       particlesJS("particles-js", {"particles":{"number":{"value":100,"density":{"enable":true,"value_area":300}},"color":{"value":"#000000"},"shape":{"type":"circle","stroke":{"width":0,"color":"#000000"},"polygon":{"nb_sides":5},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":0.5,"random":false,"anim":{"enable":false,"speed":1,"opacity_min":0.1,"sync":false}},"size":{"value":3,"random":true,"anim":{"enable":false,"speed":40,"size_min":0.1,"sync":false}},"line_linked":{"enable":true,"distance":150,"color":"#000000","opacity":0.4,"width":1},"move":{"enable":true,"speed":6,"direction":"none","random":false,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":1200}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":false,"mode":"repulse"},"onclick":{"enable":true,"mode":"push"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});
+    </script>
+
+    <script>
+      var btn = document.getElementById("btn");
+      var btnTextSend = document.getElementById("btnTextSend");
+      var btnTextDone = document.getElementById("btnTextDone");
+
+      function disableFormElements(formObject, disabled) { 
+        var inputs = formObject.getElementsByTagName("input"); 
+        for (var i = 0; i < inputs.length; i++) { 
+          inputs[i].disabled = disabled;
+        }
+        var selects = formObject.getElementsByTagName("select");
+        for (var i = 0; i < selects.length; i++) {
+          selects[i].disabled = disabled;
+        }
+        var textareas = formObject.getElementsByTagName("textarea"); 
+        for (var i = 0; i < textareas.length; i++) { 
+          textareas[i].disabled = disabled;
+        }
+        var buttons = formObject.getElementsByTagName("button");
+        for (var i = 0; i < buttons.length; i++) {
+          buttons[i].disabled = disabled;
+        }
+      }
+
+      document.getElementById("contactForm").onsubmit = (evt) => {
+        evt.preventDefault();
+
+        disableFormElements(document.getElementById("contactForm"), true);
+
+        btnTextSend.classList.add("opacity-0");
+        btnTextDone.classList.remove("opacity-0");
+        btn.classList.add("loading");
+
+        const fullName = document.getElementById("fullName").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+        const message = document.getElementById("message").value;
+
+        const url = "https://landing-contact-email.logoscode.com.mx/send"
+
+        let xhr = new XMLHttpRequest();
+        let postObj = JSON.stringify({
+          name: document.getElementById("fullName").value || "",
+          email: document.getElementById("email").value || "",
+          cellphone: document.getElementById("phone").value || "",
+          message: document.getElementById("message").value || ""
+        });
+
+        xhr.open('POST', url, true);
+        xhr.setRequestHeader('Access-Control-Allow-Origin', 'https://www.logoscode.com.mx');
+        xhr.setRequestHeader('Access-Control-Allow-Headers', '*');
+        xhr.setRequestHeader('Access-Control-Allow-Methods', 'POST, OPTIONS8');
+        xhr.setRequestHeader('x-api-key', 'uyfjm8fJRw7tjS0ebcFPm7H9RcG0VgIh9nkgRzVa');
+        xhr.onerror = function () {
+          btn.classList.remove("loading");
+          btn.classList.add("active");
+
+          setTimeout(() => {
+            btn.classList.remove("active");
+            
+            setTimeout(() => {
+              btnTextSend.classList.remove("opacity-0");
+              btnTextDone.classList.add("opacity-0");
+
+              document.getElementById("contactForm").reset();
+              disableFormElements(document.getElementById("contactForm"), false);
+            }, 1000);
+          }, 3000);
+        }
+        xhr.onload = function () {
+          btn.classList.remove("loading");
+          btn.classList.add("active");
+
+          setTimeout(() => {
+            btn.classList.remove("active");
+            
+            setTimeout(() => {
+              btnTextSend.classList.remove("opacity-0");
+              btnTextDone.classList.add("opacity-0");
+
+              document.getElementById("contactForm").reset();
+              disableFormElements(document.getElementById("contactForm"), false);
+            }, 1000);
+          }, 3000);
+        }
+
+        xhr.send(postObj);
+      }
     </script>
   </body>
 </html>
