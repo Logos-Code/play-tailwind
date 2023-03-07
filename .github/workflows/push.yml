@@ -19,4 +19,4 @@ jobs:
           aws-region: us-east-1
           
       - name: Deploy
-        run: aws s3 sync . s3://www.logoscode.com.mx --include index.html --include assets --exclude .* --exclude README.md --exclude package* --exclude *.config.js --exclude src --delete --only-show-errors
+        run: aws s3 sync . s3://www.logoscode.com.mx --include index.html --include assets --exclude .github --exclude .gitignore --exclude .prettierrc --exclude .vscode --exclude README.md --exclude package-lock.json --exclude package.json --exclude postcss.config.js --exclude src --exclude tailwind.config.js
