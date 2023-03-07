@@ -668,6 +668,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 0.75rem;
 }
 
+.mx-0{
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
 .mb-8{
   margin-bottom: 2rem;
 }
@@ -978,6 +983,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .max-w-\[400px\]{
   max-width: 400px;
+}
+
+.max-w-\[350px\]{
+  max-width: 350px;
 }
 
 .-translate-y-1\/2{
@@ -1329,6 +1338,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .pb-20{
   padding-bottom: 5rem;
+}
+
+.pt-5{
+  padding-top: 1.25rem;
+}
+
+.pb-2{
+  padding-bottom: 0.5rem;
 }
 
 .text-center{
