@@ -9,14 +9,14 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       
       - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v1
+        uses: aws-actions/configure-aws-credentials@v2
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
           
       - name: Deploy
-        run: aws s3 sync . s3://www.logoscode.com.mx --include index.html --include assets --exclude .github --exclude .gitignore --exclude .prettierrc --exclude .vscode --exclude README.md --exclude package-lock.json --exclude package.json --exclude postcss.config.js --exclude src --exclude tailwind.config.js
+        run: aws s3 sync . s3://www.logoscode.com.mx --include index.html --include assets --exclude .github --exclude .gitignore --exclude .prettierrc --exclude .vscode --exclude README.md --exclude package-lock.json --exclude package.json --exclude postcss.config.js --exclude src --exclude tailwind.config.js --exclude .git --delete --only-show-errors
