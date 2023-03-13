@@ -107,16 +107,4 @@ function scrollTo(element, to = 0, duration = 500) {
   document.querySelector(".scroll-to-services").onclick = (evt) => {
     scrollTo(document.documentElement, document.querySelector('#services').offsetTop);
   };
-
-  // document.querySelectorAll(".flip-card-control").forEach((el) => {
-  //   el.onclick = (evt) => {
-  //     el.parentElement.parentElement.classList.add("flipped");
-  //   }
-  // });
-
-  // document.querySelectorAll(".flip-card-control-return").forEach((el) => {
-  //   el.onclick = (evt) => {
-  //     el.parentElement.parentElement.classList.remove("flipped");
-  //   }
-  // });
 })();
