@@ -41,23 +41,24 @@ function setupOnScroll() {
   // section menu active
   function onScroll(event) {
     const sections = document.querySelectorAll(".ud-menu-scroll");
-    const scrollPos =
-      window.pageYOffset ||
-      document.documentElement.scrollTop ||
-      document.body.scrollTop;
+    const scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
 
     for (let i = 0; i < sections.length; i++) {
       const currLink = sections[i];
       const val = currLink.getAttribute("href");
       const refElement = document.querySelector(val);
       const scrollTopMinus = scrollPos + 73;
-      if (
-        refElement.offsetTop <= scrollTopMinus &&
-        refElement.offsetTop + refElement.offsetHeight > scrollTopMinus
-      ) {
-        document
-          .querySelector(".ud-menu-scroll")
-          .classList.remove("text-primary");
+
+      if ( val === "#contact" && ( document.body.scrollHeight ===  window.scrollY + window.innerHeight  ) ) {
+        sections.forEach((sec) => {
+          sec.classList.add("text-white");
+          sec.classList.remove("text-primary", "underline");
+        });
+
+        currLink.classList.add("text-primary", "underline");
+        currLink.classList.remove("text-white");
+      } else if (refElement.offsetTop <= scrollTopMinus && refElement.offsetTop + refElement.offsetHeight > scrollTopMinus ) {
+        document.querySelector(".ud-menu-scroll").classList.remove("text-primary");
 
         currLink.classList.add("text-primary", "underline");
         currLink.classList.remove("text-white");
